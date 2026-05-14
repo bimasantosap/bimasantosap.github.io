@@ -8,7 +8,7 @@
     --color-cream: #f5f1e8;          
     --color-sand: #e8dcc4;           
     --color-terracotta: #b8724f;     
-    --color-dark: #2a2a2a;           
+    --color-dark: #000000;           
     --color-text: #3d3d3d;           
     --color-light: #ffffff;          
     --color-coklatmuda: #bd8956;
@@ -24,6 +24,66 @@
     --abu:         #6b7a68;
     --border:      #d4c9b0;
     --merah:       #c0392b;
+    /* RGB / SHADOW */
+    --shadow-black-light: rgba(0,0,0,0.2);
+    --shadow-black-medium: rgba(0,0,0,0.3);
+    --shadow-black-strong: rgba(0,0,0,0.5);
+    --shadow-black-heavy: rgba(0,0,0,0.7);
+    --gold-hover-shadow: rgba(139,105,20,0.5);
+    /* WHITE TRANSPARENT */
+    --white-10: rgba(255,255,255,0.1);
+    --white-20: rgba(255,255,255,0.2);
+    --white-55: rgba(255,255,255,0.55);
+    --white-60: rgba(255,255,255,0.6);
+    --white-90: rgba(255,255,255,0.9);
+    /* GREEN GLOW */
+    --glow-green-1: rgba(163,255,163,0.9);
+    --glow-green-2: rgba(122,214,122,0.8);
+    --glow-green-3: rgba(122,214,122,0.7);
+    --glow-green-4: rgba(122,214,122,0.6);
+    /* GREEN SHADOW */
+    --green-shadow-soft: rgba(42,92,37,0.12);
+    --green-shadow-medium: rgba(27,61,27,0.15);
+    /* GOLD SHADOW */
+    --gold-shadow: rgba(232,184,32,0.2);
+    /* TABLE */
+    --table-border: #a7a7a7;
+    --table-hover: #dddddd;
+    /* CONTACT */
+    --pink-soft: #ffe5f5;
+    --pink-main: #e84393;
+    --blue-soft: #e5f0ff;
+    --blue-main: #0984e3;
+    --yellow-soft: #fff5e5;
+    --yellow-main: #fdcb6e;
+    --red-soft: #ffe5e5;
+    --red-main: #d63031;
+    /* SOSMED */
+    --facebook: #1877f2;
+    --facebook-dark: #155db2;
+    --youtube: #ff0000;
+    --youtube-dark: #cc0000;
+    --whatsapp: #25d366;
+    --whatsapp-dark: #1da851;
+    --instagram-1: #f09433;
+    --instagram-2: #e6683c;
+    --instagram-3: #dc2743;
+    --instagram-4: #cc2366;
+    --instagram-5: #bc1888;
+    /* ANIMAL COLORS */
+    --gajah-1: #6b8e5f;
+    --gajah-2: #4a7c28;
+    --harimau-1: #c87137;
+    --harimau-2: #8b6914;
+    --jerapah-1: #d4a76a;
+    --jerapah-2: #b8724f;
+    --zebra-1: #8a8a8a;
+    --zebra-2: #4a4a4a;
+    --orangutan-1: #a66e47;
+    --orangutan-2: #7d4f2a;
+    --komodo-1: #5a6b3f;
+    --komodo-2: #3d4a2a;
+
     
     /* Typography */
     --font-display: 'Playfair Display', serif;
@@ -81,18 +141,23 @@ body {
     box-shadow: var(--shadow-medium);
 }
 
+.header .container {
+    max-width: 100%;
+    padding: 0 25px;
+}
+
 .nav-wrapper {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 }
 
 .logo {
-    margin-left: -80px;
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-left: 0;
 }
 
 .logo-img {
@@ -100,7 +165,6 @@ body {
     height: auto;
     display: block;
 }
-
 
 .logo-text-wrapper {
     display: flex;
@@ -114,7 +178,7 @@ body {
     font-weight: 700;
     color: var(--color-light);
     letter-spacing: 2px;
-    margin: 0; 
+    margin: 0;
     line-height: 1;
 }
 
@@ -124,23 +188,21 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 500;
-    margin-top: 6px; /
+    margin-top: 6px;
 }
 
 .nav {
-    align-items: center;
     display: flex;
+    align-items: center;
     gap: var(--spacing-sm);
-    margin-right: -80px;
-    color: #f5f1e8;
-    font: bold;
+    margin-right: 0;
 }
 
 .nav-link {
-    color: var(--color-forest-green);
+    color: var(--color-light);
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: var(--transition);
@@ -156,13 +218,13 @@ body {
     width: 80%;
     height: 2px;
     background-color: var(--color-accent);
-    transition: transform 0.1s ease;
+    transition: transform 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--color-light);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--white-20);
 }
 
 .nav-link:hover::after,
@@ -174,6 +236,7 @@ body {
    Hero Section
    ========================================== */
 .hero {
+    margin-top: 35px;
     position: relative;
     height: 100vh;
     display: flex;
@@ -193,7 +256,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: var(--shadow-black-strong);
     z-index: 1;
 }
 
@@ -212,11 +275,11 @@ body {
     line-height: 1.5;
     letter-spacing: -1px;
     text-shadow:
-    0 3px 8px rgba(0,0,0,0.7),
-    0 0 12px rgba(163, 255, 163, 0.9),
-    0 0 24px rgba(122, 214, 122, 0.8),
-    0 0 40px rgba(122, 214, 122, 0.7),
-    0 0 65px rgba(122, 214, 122, 0.6);
+    0 3px 8px var(--shadow-black-heavy),
+    0 0 12px var(--glow-green-1),
+    0 0 24px var(--glow-green-2),
+    0 0 40px var(--glow-green-3),
+    0 0 65px var(--glow-green-4);
 }
 
 .hero-description {
@@ -225,11 +288,11 @@ body {
     color: var(--color-light);
     font-weight: 400;
     text-shadow:
-    0 3px 8px rgba(0,0,0,0.7),
-    0 0 12px rgba(163, 255, 163, 0.9),
-    0 0 24px rgba(122, 214, 122, 0.8),
-    0 0 40px rgba(122, 214, 122, 0.7),
-    0 0 65px rgba(122, 214, 122, 0.6);
+    0 3px 8px var(--shadow-black-heavy),
+    0 0 12px var(--glow-green-1),
+    0 0 24px var(--glow-green-2),
+    0 0 40px var(--glow-green-3),
+    0 0 65px var(--glow-green-4);
 }
 
 .ajakan-ayo {
@@ -239,10 +302,10 @@ body {
     max-width: 100%;
     object-fit: contain;
     filter:
-    drop-shadow(0 2px 5px rgba(0,0,0,0.45))
-    drop-shadow(0 0 8px rgba(163, 255, 163, 0.55))
-    drop-shadow(0 0 18px rgba(122, 214, 122, 0.45))
-    drop-shadow(0 0 30px rgba(122, 214, 122, 0.35));
+    drop-shadow(0 2px 5px var(--shadow-black-strong))
+    drop-shadow(0 0 8px rgba(163,255,163,0.55))
+    drop-shadow(0 0 18px rgba(122,214,122,0.45))
+    drop-shadow(0 0 30px rgba(122,214,122,0.35));
 }
 
 .btn-primary {  
@@ -258,9 +321,9 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #a47e1a;
+    background-color: var(--emas-tua);
+    box-shadow: 0 12px 35px var(--gold-hover-shadow);
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(139, 105, 20, 0.5);
 }
 
 .btn-primary.tiket {  
@@ -268,8 +331,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px 60px;
-    background-color: #2d5016;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-light);
     text-decoration: none;
     font-size: large;
     border-radius: 5px;
@@ -328,7 +391,7 @@ body {
     height: 500px;
     width: 100%;
     font-size: 12rem;
-    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 10px 30px var(--shadow-black-medium));
 }
 
 .about-content{
@@ -416,24 +479,23 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
-    /* margin-right: 10px; */
 }
 
 .search-box input {
     width: 600px;
     padding: 12px 18px;
-    border: 2px solid var(--color-dark);
+    border: 2px solid var(--color-text);
     border-radius: 50px;
     outline: none;
     font-size: 0.95rem;
     background: var(--color-light);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 15px var(--abu);
     transition: 0.2s ease;
 }
 
 .search-box input:focus {
     border: 2px solid var(--color-accent);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px var(--abu);
 }
 
 .search-box button {
@@ -448,16 +510,16 @@ body {
     border: none;
     border-radius: 50%;
     background: var(--color-primary);
-    color: white;
+    color: var(--color-light);
     cursor: pointer;
     font-size: 1rem;
     transition: 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px var(--abu);
 }
 
 .search-box button:hover {
     transform: scale(1.08);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px var(--abu);
 }
 
 .animals {
@@ -513,71 +575,39 @@ body {
     position: relative;
 }
 
-.animal-placeholder.gajah {
-    background: linear-gradient(135deg, #6b8e5f, #4a7c28);
-}
-
-.animal-placeholder.harimau {
-    background: linear-gradient(135deg, #c87137, #8b6914);
-}
-
-.animal-placeholder.jerapah {
-    background: linear-gradient(135deg, #d4a76a, #b8724f);
-}
-
-.animal-placeholder.zebra {
-    background: linear-gradient(135deg, #8a8a8a, #4a4a4a);
-}
-
-.animal-placeholder.Kura-kura {
-    background: linear-gradient(135deg, #8a8a8a, #4a4a4a);
-}
-
-.animal-placeholder.orangutan {
-    background: linear-gradient(135deg, #a66e47, #7d4f2a);
-}
-
-.animal-placeholder.komodo {
-    background: linear-gradient(135deg, #5a6b3f, #3d4a2a);
-}
-
-.animal-placeholder.berang {
-    background: linear-gradient(135deg, #5a6b3f, #3d4a2a);
-}
-
 .animal-fotohewan {
     height: 280px;
     font-size: 8rem;
     opacity: 0.9;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 8px 20px rgba(var(--color-dark), 0.2));
 }
 
 .animal-fotopenyu {
     height: 330px;
     font-size: 8rem;
     opacity: 0.9;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 8px 20px rgba(var(--color-dark), 0.2));
 }
 
 .animal-fotokomodo {
     height: 300px;
     font-size: 8rem;
     opacity: 0.9;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 8px 20px rgba(var(--color-dark), 0.2));
 }
 
 .animal-fotoberang {
     height: 280px;
     font-size: 8rem;
     opacity: 0.9;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 8px 20px rgba(var(--color-dark), 0.2));
 }
 
 .animal-fotounta {
     height: 330px;
     font-size: 8rem;
     opacity: 0.9;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 8px 20px rgba(var(--color-dark), 0.9));
 }
 
 .animal-overlay {
@@ -587,7 +617,7 @@ body {
 }
 
 .animal-region {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(var(--color-light), 0.9);
     color: var(--color-primary);
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -1503,7 +1533,7 @@ body {
 }
 
 /* ===== TOMBOL SUBMIT ===== */
-.tombol-wa {
+.tombol-email {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1520,13 +1550,13 @@ body {
   letter-spacing: 0.5px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(184,138,0,0.40);
+  box-shadow: 0 6px 20px var(--emas-tua);
   transition: all 0.22s;
 }
 
-.tombol-wa:hover {
+.tombol-email:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(184,138,0,0.50);
+  box-shadow: 0 10px 30px var(--emas-tua);
 }
 
 .tombol-wa:active {
@@ -1553,7 +1583,7 @@ body {
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-  border: 1px solid rgba(232,184,32,0.3);
+  border: 1px solid var(--color-accent);
 }
 
 .ringkasan-header {
@@ -1627,170 +1657,101 @@ body {
   margin-top: 1px;
 }
 
-/* ==========================================
-   Responsive Design
-   ========================================== */
-
-/* Tablet */
-@media (max-width: 968px) {
-    .nav {
-        gap: var(--spacing-sm);
-    }
-    
-    .nav-link {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .hero-title {
-        font-size: 3rem;
-    }
-    
-    .hero-description {
-        font-size: 1.1rem;
-    }
-    
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    
-    .image-placeholder {
-        height: 400px;
-    }
-    
-    .about-features {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .tickets-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
+/* ================================================
+   konfirmasi tiket.css — Halaman konfirmasi Reservasi Tiket
+   Solo Safari · Kebun Binatang Modern
+   ================================================ */
+.konfirmasi-pemesanan {
+    min-height: 120vh;
+    background: var(--hijau-tua);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-    :root {
-        --spacing-lg: 3rem;
-        --spacing-xl: 4rem;
-    }
-    
-    .nav-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .logo h1 {
-        font-size: 1.6rem;
-    }
-    
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .nav-link {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.85rem;
-    }
-    
-    .hero {
-        margin-top: 140px;
-        height: 70vh;
-        min-height: 500px;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-description {
-        font-size: 1rem;
-    }
-    
-    .btn-primary {
-        padding: 0.9rem 2rem;
-        font-size: 1rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .image-placeholder {
-        height: 300px;
-    }
-    
-    .image-icon {
-        font-size: 8rem;
-    }
-    
-    .about-features {
-        grid-template-columns: 1fr;
-    }
-    
-    .feature-number {
-        font-size: 2rem;
-    }
-    
-    .animals-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .tickets-table {
-        font-size: 0.85rem;
-    }
-    
-    .tickets-table th,
-    .tickets-table td {
-        padding: var(--spacing-sm);
-    }
-    
-    .tickets-table th {
-        font-size: 0.95rem;
-    }
-    
-    .tickets-table .category {
-        font-size: 0.95rem;
-    }
-    
-    .tickets-table .price {
-        font-size: 1rem;
-    }
-    
-    .tickets-table .description {
-        font-size: 0.85rem;
-    }
+.konfirmasi-box {
+    margin-top: 80px;
+    background: var(--color-light);
+    width: 100%;
+    max-width: 550px;
+    padding: 50px 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 45px var(--color-dark);
+    position: relative;
+    overflow: hidden;
 }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
-    
-    .logo h1 {
-        font-size: 1.4rem;
-    }
-    
-    .hero-title {
-        font-size: 1.7rem;
-    }
-    
-    .section-title {
-        font-size: 1.7rem;
-    }
-    
-    .animal-emoji {
-        font-size: 6rem;
-    }
+.konfirmasi-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--emas);
 }
 
+.ikon-sukses {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--hijau-muda), var(--color-primary));
+    color: var(--color-light);
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px var(--color-secondary);
+}
+
+.konfirmasi-box h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.konfirmasi-box h2 {
+    font-size: 1.4rem;
+    color: var(--emas-tua);
+}
+
+.konfirmasi-box p {
+    font-size: 1rem;
+    color: var(--abu);
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.info-email {
+    background: var(--color-light);
+    border: 2px solid var(--abu);
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.btn-kembali {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, var(--emas) 0%, var(--emas-tua) 100%);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.btn-kembali:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--emas-tua);
+}
 
 /* =====================================================
    RESPONSIVE & CROSS-BROWSER FIX
@@ -1836,246 +1797,5 @@ img {
     .informasi-box {
         width: 100%;
         max-width: 550px;
-    }
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media screen and (max-width: 992px) {
-
-    .container {
-        padding: 0 20px;
-    }
-
-    .nav-wrapper {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .logo {
-        margin-left: 0;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .nav {
-        margin-right: 0;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .hero {
-        padding: 140px 20px 60px;
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .hero-title {
-        font-size: 3rem;
-        margin-top: 0;
-        line-height: 1.3;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-        line-height: 1.6;
-        padding: 0 20px;
-    }
-
-    .ajakan-ayo {
-        height: auto;
-        max-height: 320px;
-    }
-
-    .btn-primary {
-        margin: 20px auto 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: fit-content;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .about-features {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tickets-wrapper {
-        gap: 20px;
-    }
-
-    .tiket-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .informasi-box {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .jam-box {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .grid-tiket {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media screen and (max-width: 768px) {
-
-    .container {
-        padding: 0 15px;
-    }
-
-    .header {
-        padding: 12px 0;
-    }
-
-    .nav-wrapper {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .logo {
-        margin-left: 0;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .logo-img {
-        max-width: 45px;
-    }
-
-    .logo h1 {
-        font-size: 1.5rem;
-    }
-
-    .nav {
-        margin-right: 0;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .hero {
-        min-height: 100vh;
-        height: auto;
-        padding: 120px 15px 60px;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-description {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    .btn-primary {
-        width: 100%;
-        max-width: 280px;
-        margin: 20px auto 0;
-        padding: 16px 20px;
-        text-align: center;
-    }
-
-    .section-title,
-    .section-titlee,
-    .table-title {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .title-accent,
-    .title-acent {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .about-features {
-        grid-template-columns: 1fr;
-    }
-
-    .animals-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tickets-wrapper {
-        flex-direction: column;
-    }
-
-    .my-table {
-        width: 100%;
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .social-media {
-        flex-direction: column;
-    }
-
-    .social-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .baris-field {
-        flex-direction: column;
-    }
-
-    .grid-tiket {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media screen and (max-width: 480px) {
-
-    .hero-title {
-        font-size: 1.7rem;
-    }
-
-    .section-title,
-    .section-titlee,
-    .table-title {
-        font-size: 1.6rem;
-    }
-
-    .btn-primary {
-        max-width: 100%;
-    }
-
-    .contact-card {
-        flex-direction: column;
-        align-items: flex-start;
     }
 }

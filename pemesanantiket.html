@@ -26,7 +26,7 @@
                         <a href="index.html" class="nav-link">Beranda</a>
                         <a href="tentang.html" class="nav-link">Tentang</a>
                         <a href="hewan.html" class="nav-link">Hewan</a>
-                        <a href="tiket.html" class="nav-link">Tiket</a>
+                        <a href="tiket.html" class="nav-link active">Tiket</a>
                         <a href="kontak.html" class="nav-link">Kontak</a>
                     </nav>
                 </div>
@@ -38,6 +38,9 @@
         <div class="heri">
           <div class="kecil">🎟️ Pemesanan Online</div>
         </div>
+
+        <!-- ===== KONTEN UTAMA ===== -->
+        <div class="konten">
 
         <!-- INFO SAMPING -->
           <div class="kartu-ringkasan">
@@ -82,10 +85,9 @@
         <div class="heri">  
           <h2>Formulir Reservasi Tiket</h2>
         </div>
-        <!-- ===== KONTEN UTAMA ===== -->
-        <div class="konten">
+
           <!-- FORM -->
-          <form action="mailto:tiket@solosafari.id" method="get" enctype="text/plain">
+          <form action="konfirmasitiket.html" method="get" enctype="text/plain">
             <input type="hidden" name="subject" value="Pemesanan Tiket">
 
             <!-- 1. JENIS TIKET -->
@@ -332,13 +334,11 @@
                   </label>
                 </div>
 
-                <button type="submit" class="tombol-wa">
-                  <svg class="ikon-wa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                  </svg>
+                <button type="submit" class="tombol-email">
                   Kirim Pesanan via Email
                 </button>
-
+               
+                </form>
               </div>
             </div>
         </div>
